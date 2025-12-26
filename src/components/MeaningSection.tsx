@@ -40,7 +40,7 @@ export default function MeaningSection() {
       {/* 🌸 BACKGROUND IMAGE (CLEARER) */}
       <div className="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1583668269572-441ed1128aca?auto=format&fit=crop&w=1800&q=90"
+          src="https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1692709761055-18278a5cbffb%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8Mjd8fGZsb3dlcnMlMkMlMjBoZWFydCUyQyUyMGxldHRlcnxlbnwwfDB8fHwxNzY1MzcyNTE3fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=sa7dB8s1--4rWL0JxeTp8mZrF5FCa_pwSQDhqMSzlZo"
           className="w-full h-full object-cover opacity-65"
           alt="background"
         />
@@ -97,6 +97,7 @@ export default function MeaningSection() {
             </div>
           ))}
         </div>
+
 
         {/* Quote */}
         <p className="mt-24 text-center font-cormorant text-3xl md:text-4xl text-[#5c2a3a] italic">

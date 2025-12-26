@@ -1,93 +1,147 @@
-import React from "react";
+import { useState } from "react";
 
-const apologyCards = [
-  { title: "My Blunder", text: "I admit I hurt you. I should have been more careful with your heart." },
-  { title: "Your Pain", text: "I see the pain I caused — and I truly regret it." },
-  { title: "Reflection", text: "I’ve thought deeply about my actions and their impact on you." },
-  { title: "Learning", text: "This taught me that love needs patience and presence." },
-  { title: "Your Worth", text: "You deserve effort, softness, and consistency — always." },
-  { title: "Commitment", text: "I’m committed to being better, not just saying sorry." },
-  { title: "Forgiveness", text: "I ask for a chance to show my love through actions." },
-  { title: "Us", text: "I still believe in us — healing, growing, choosing each other again." },
+const STORY_TABS = [
+  {
+    key: "mistake",
+    label: "My Mistake",
+    title: "My Mistake",
+    text: "I messed up, and I’m truly sorry for the pain I’ve caused you.",
+    img: "https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1613758812084-4e2be896fd04%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTl8fGZsb3dlcnMlMkMlMjBoZWFydCUyQyUyMGxldHRlcnxlbnwwfDB8fHwxNzY1MzcyNTE3fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=OYn_yfISj_cp5yw61Sj2DqnOMFnGsuH3McflI5cYPTc",
+  },
+  {
+    key: "feelings",
+    label: "Your Feelings",
+    title: "Your Feelings",
+    text: "I understand that you’re hurt, and your feelings are completely valid.",
+    img: "https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    key: "promise",
+    label: "My Promise",
+    title: "My Promise",
+    text: "I promise to listen better, grow, and never take you for granted again.",
+    img: "https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1660918262717-b08af8df4d82%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MjN8fGZsb3dlcnMlMkMlMjBoZWFydCUyQyUyMGxldHRlcnxlbnwwfDB8fHwxNzY1MzcyNTE3fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=8HTNXqliF4lyvPhlSp9qOj3YeDrdyRnxkqSh3cX7iOE",
+  },
+  {
+    key: "future",
+    label: "Our Future",
+    title: "Our Future",
+    text: "I hope we can heal, rebuild, and choose each other again — every day.",
+    img: "https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1536953784228-c8aeb3efb458%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTV8fGZsb3dlcnMlMkMlMjBoZWFydCUyQyUyMGxldHRlcnxlbnwwfDB8fHwxNzY1MzcyNTE3fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=gFU6xBrxyGjX92_QYP_Kj9p9fSS08fQSsQjQyhoF07o",
+  },
 ];
 
 export default function ApologySection() {
+  const [activeStory, setActiveStory] = useState(STORY_TABS[0]);
+
   return (
-    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-br from-[#fff7fa] via-[#fffefe] to-[#fff1f6]">
+    <section className="bg-[#fff7f3] py-24 px-6">
+      <div className="max-w-7xl mx-auto space-y-24">
 
-      {/* Soft floating glow */}
-      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-rose-200/30 blur-[160px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-pink-200/30 blur-[160px] rounded-full" />
-
-      <div className="relative z-10 max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="text-center mb-24">
-          <h2 className="text-5xl md:text-6xl font-playfair text-[#3a1d28] mb-6">
-            From My Heart
+        {/* ================= HEADER ================= */}
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-widest text-rose-400 mb-2">
+            My Apology
+          </p>
+          <h2 className="text-4xl md:text-5xl font-serif text-rose-900 mb-3">
+            A Sincere Sorry
           </h2>
-          <p className="text-2xl font-cormorant italic text-[#6b3444] max-w-3xl mx-auto">
-            These aren’t excuses…  
-            they’re the thoughts that keep floating back to you.
+          <p className="text-rose-700 max-w-xl mx-auto">
+            I'm not proud of what happened, but I am committed to making amends.
           </p>
         </div>
 
-        {/* Floating Cards */}
-        <div className="relative flex flex-wrap justify-center gap-10">
+        {/* ================= MAIN APOLOGY ================= */}
+        <div className="grid md:grid-cols-2 gap-14 items-center">
+          <img
+            src="https://images.unsplash.com/photo-1625480886337-3d5d5a395577"
+            className="rounded-[2rem] h-[420px] w-full object-cover shadow-2xl"
+            alt=""
+          />
 
-          {apologyCards.map((item, index) => (
-            <div
-              key={index}
-              className={`
-                group
-                w-[280px] md:w-[320px]
-                p-8
-                rounded-[2.2rem]
-                bg-white/30
-                backdrop-blur-xl
-                border border-white/40
-                shadow-[0_30px_80px_rgba(0,0,0,0.15)]
-                transition-all duration-500
-                hover:-translate-y-4 hover:rotate-[-0.5deg]
-                animate-[float_6s_ease-in-out_infinite]
-              `}
-              style={{ animationDelay: `${index * 0.4}s` }}
-            >
-              <h3 className="text-2xl font-playfair text-[#3a1d28] mb-4">
-                {item.title}
-              </h3>
+          <div className="bg-white/80 backdrop-blur-xl p-10 rounded-[2rem] shadow-xl">
+            <p className="text-xs uppercase tracking-widest text-rose-400 mb-2">
+              A Sincere Sorry
+            </p>
 
-              <p className="text-lg font-cormorant text-[#6b3444] leading-relaxed">
-                {item.text}
-              </p>
+            <h3 className="text-4xl font-serif text-rose-900 mb-6">
+              My Sweetu…
+            </h3>
 
-              {/* Soft tag */}
-              <span className="inline-block mt-6 px-4 py-1 rounded-full bg-rose-100/70 text-[#7a2f47] text-sm">
-                My Truth
-              </span>
-            </div>
-          ))}
+            <p className="text-lg text-rose-800 mb-4">
+              Wo ladka jo uss din baarish mein akele khada tha,
+              aaj phir se thoda akela hai.
+            </p>
+
+            <p className="text-lg text-rose-800 mb-4">
+              Bas iss baar… wo chahta hai tum uska haath pakad lo.
+            </p>
+
+            <p className="text-lg text-rose-700">
+              Maine galti ki hai. Par tumhari value kabhi kam nahi hui.
+            </p>
+          </div>
         </div>
 
-        {/* Closing Line */}
-        <div className="text-center mt-28">
-          <p className="text-3xl md:text-4xl font-cormorant italic text-[#5c2a3a] max-w-4xl mx-auto leading-relaxed">
-            I may not be perfect…  
-            but every feeling here is real.  
-            And you — you are still my safest place.
+        {/* ================= STORY TABS ================= */}
+        <div>
+
+          {/* Tabs */}
+          <div className="flex justify-center gap-4 mb-16 flex-wrap">
+            {STORY_TABS.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveStory(tab)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all
+                  ${
+                    activeStory.key === tab.key
+                      ? "bg-rose-900 text-white shadow-md"
+                      : "bg-white border border-rose-200 text-rose-700 hover:bg-rose-50"
+                  }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Content */}
+          <div className="grid md:grid-cols-2 gap-20 items-center">
+
+            {/* TEXT */}
+            <div>
+              <h3 className="text-4xl font-serif text-rose-900 mb-6">
+                {activeStory.title}
+              </h3>
+
+              <p className="text-xl text-rose-700 leading-relaxed max-w-lg">
+                {activeStory.text}
+              </p>
+            </div>
+
+            {/* IMAGE */}
+            <div className="rounded-[2rem] overflow-hidden shadow-2xl">
+              <img
+                src={activeStory.img}
+                alt={activeStory.title}
+                className="w-full h-[420px] object-cover"
+              />
+            </div>
+
+          </div>
+        </div>
+
+        {/* ================= FINAL NOTE ================= */}
+        <div className="text-center pt-24">
+          <h2 className="text-4xl font-serif text-rose-900 mb-6">
+            Sweetu…
+          </h2>
+          <p className="text-lg text-rose-700 max-w-2xl mx-auto">
+            I don’t want perfection.  
+            I just want us — honest, healing, and together.
           </p>
         </div>
 
       </div>
-
-      {/* Floating animation */}
-      <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-14px); }
-          100% { transform: translateY(0px); }
-        }
-      `}</style>
     </section>
   );
 }

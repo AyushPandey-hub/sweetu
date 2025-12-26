@@ -73,6 +73,37 @@ export default function PromisesSection() {
 
       </div>
 
+
+          {/* ================= ROW 2 ================= */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="bg-[#e0456f] text-white rounded-3xl p-6 shadow-lg">
+            <h4 className="font-semibold mb-2">Patience</h4>
+            <p className="text-sm opacity-90">
+              I’ll give you space if you need it.
+            </p>
+          </div>
+
+          <img
+            src="https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1550327616-e75a6eb1ba33%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8MTF8fGZsb3dlcnMlMkMlMjBoZWFydCUyQyUyMGxldHRlcnxlbnwwfDB8fHwxNzY1MzcyNTE3fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=NyurgRqKprfETV41aMK4EriiOI-URB76wicdG_edoSw"
+            className="rounded-3xl h-[240px] w-full object-cover shadow-lg"
+            alt=""
+          />
+
+          <div className="bg-white rounded-3xl p-6 shadow-lg">
+            <h4 className="font-semibold text-rose-900 mb-2">Effort</h4>
+            <p className="text-rose-700 text-sm">
+              I’ll work hard to earn back your trust.
+            </p>
+          </div>
+
+          <img
+            src="https://proxy.electricblaze.com/?u=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1553606826-83c2ada2d685%3Fixid%3DM3w0Mzc5fDB8MXxzZWFyY2h8Mjd8fHJvbWFudGljJTIwZmxvd2Vyc3xlbnwwfDB8fHwxNzYyNzU4NjA1fDA%26ixlib%3Drb-4.1.0%26auto%3Dformat%26fit%3Dcrop%26w%3D1200%26q%3D50&e=1770336000&s=JwtyP4s_s45dgkXg3VtHdkgxDhCYVjdw8WAZeA0ENpM"
+            className="rounded-3xl h-[240px] w-full object-cover shadow-lg"
+            alt=""
+          />
+        </div>
+
+
       {/* Floating animation */}
       <style>{`
         @keyframes float {
